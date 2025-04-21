@@ -1,0 +1,23 @@
+{
+  "category": {
+    "finance": "金融",
+    "telecom": "電信",
+    "shopping": "購物",
+    "supermarket": "超市",
+    "mall": "購物中心",
+    "mobile_retail": "手機零售",
+    "convenience_store": "便利商店",
+    "fashion": "時尚",
+    "female_fashion": "女性時尚",
+    "male_fashion": "男性時尚",
+    "restaurant_chains": "餐飲連鎖",
+    "restaurant_subcategories": {
+      "fast_food_chains": "速食連鎖",
+      "pizza_chains": "披薩連鎖",
+      "other_restaurants": "其他餐飲"
+    },
+    "delivery_platforms": "外送平台",
+    "coffee_chains": "咖啡店連鎖"
+  },
+  "yourtitle": "越南頂級品牌"
+}

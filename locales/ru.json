@@ -1,0 +1,23 @@
+{
+    "category": {
+      "finance": "Финансы",
+      "telecom": "Телекоммуникации",
+      "shopping": "Покупки",
+      "supermarket": "Супермаркет",
+      "mall": "Торговый центр",
+      "mobile_retail": "Магазин мобильных",
+      "convenience_store": "Минимаркет",
+      "fashion": "Мода",
+      "female_fashion": "Женская мода",
+      "male_fashion": "Мужская мода",
+      "restaurant_chains": "Сети ресторанов",
+      "restaurant_subcategories": {
+        "fast_food_chains": "Сети фастфуда",
+        "pizza_chains": "Пиццерии",
+        "other_restaurants": "Другие рестораны"
+      },
+      "delivery_platforms": "Платформы доставки",
+      "coffee_chains": "Кофейни"
+    },
+    "yourtitle": "Лучшие бренды Вьетнама"
+  }
