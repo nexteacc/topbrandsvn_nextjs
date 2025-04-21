@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { directoryData } from './data/directoryData';
+import  directoryData  from './data/directoryData';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
 
 const mainCategories = [
