@@ -65,7 +65,6 @@ const BrandSection = ({ titleKey, brands, isSubCategory = false, subSections }: 
 
 export default function HomePage() {
   const { t, i18n } = useTranslation();
-  const lang = i18n.language;
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null); 
 
   const handleCardClick = (categoryId: string) => {

@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import ThemeProvider from "./components/ThemeProvider";
 import I18nProvider from "./components/i18n-provider";
 import Head from 'next/head';
+import Script from 'next/script';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,13 +23,7 @@ export const metadata: Metadata = {
   description: "Browse top brands in Vietnam by category",
 };
 
-export default function RootLayout({
-  children,
-
-}: Readonly<{
-  children: React.ReactNode;
-
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <Head>
@@ -49,8 +44,10 @@ export default function RootLayout({
                 {children}
               </main>
               <Footer />
-              <script async src="https://www.googletagmanager.com/gtag/js?id=G-703Z96SWLE"></script>
-              <script
+              <Script async src="https://www.googletagmanager.com/gtag/js?id=G-703Z96SWLE"></Script>
+              <Script
+                id="google-analytics"
+                strategy="afterInteractive"
                 dangerouslySetInnerHTML={{
                   __html: `
                     window.dataLayer = window.dataLayer || [];
