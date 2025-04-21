@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ThemeProvider from "./components/ThemeProvider";
 import I18nProvider from "./components/i18n-provider";
+import Head from 'next/head';
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,23 +24,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  // params: { locale } // If using Next.js i18n routing later
+
 }: Readonly<{
   children: React.ReactNode;
-  // params: { locale: string };
+
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        <I18nProvider /* initialLocale={locale} */ >
-          <ThemeProvider
-            attribute="class"
-            defaultTheme="system"
-            enableSystem
-            disableTransitionOnChange
-          >
+      <Head>
+        <link rel="alternate" href="https://example.com/en" hreflang="en" />
+        <link rel="alternate" href="https://example.com/zh" hreflang="zh" />
+        <link rel="alternate" href="https://example.com/zh-TW" hreflang="zh-TW" />
+        <link rel="alternate" href="https://example.com/ko" hreflang="ko" />
+        <link rel="alternate" href="https://example.com/vi" hreflang="vi" />
+        <link rel="alternate" href="https://example.com/ru" hreflang="ru" />
+        <link rel="alternate" href="https://example.com/ja" hreflang="ja" />
+      </Head>
+      <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+        <I18nProvider>
+          <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <div className="min-h-screen bg-white dark:bg-gray-900 text-[#222222] dark:text-gray-100 flex flex-col">
               <Header />
               <main className="flex-grow container mx-auto px-6 py-12">

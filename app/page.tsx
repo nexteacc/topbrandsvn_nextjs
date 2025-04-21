@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import  directoryData  from './data/directoryData';
 import { ArrowLeft, ChevronRight } from 'lucide-react';
+import Head from 'next/head';
 
 const mainCategories = [
   { id: 'finance', gradient: 'bg-gradient-to-r from-pink-300 to-orange-300' },
@@ -63,14 +64,15 @@ const BrandSection = ({ titleKey, brands, isSubCategory = false, subSections }: 
 
 
 export default function HomePage() {
-  const { t } = useTranslation();
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const { t, i18n } = useTranslation();
+  const lang = i18n.language;
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null); 
 
   const handleCardClick = (categoryId: string) => {
     setSelectedCategory(categoryId === selectedCategory ? null : categoryId);
   };
 
-  const handleBackClick = () => {
+  const handleBackClick = () => { 
     setSelectedCategory(null);
   };
 
@@ -84,9 +86,13 @@ export default function HomePage() {
     return false;
   };
 
-
   return (
     <div className="w-full">
+      <Head>
+        <title>{t('yourtitle')}</title>
+        <meta name="description" content={t('page_description')} />
+        <meta name="keywords" content={t('page_keywords')} />
+      </Head>
       {selectedCategory && (
         <button
           onClick={handleBackClick}
