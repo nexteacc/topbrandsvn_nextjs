@@ -64,14 +64,14 @@ const BrandSection = ({ titleKey, brands, isSubCategory = false, subSections }: 
 
 
 export default function HomePage() {
-  const { t, i18n } = useTranslation();
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null); 
+  const { t } = useTranslation(); // 移除未使用的 i18n
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   const handleCardClick = (categoryId: string) => {
     setSelectedCategory(categoryId === selectedCategory ? null : categoryId);
   };
 
-  const handleBackClick = () => { 
+  const handleBackClick = () => {
     setSelectedCategory(null);
   };
 
