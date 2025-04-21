@@ -27,13 +27,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" suppressHydrationWarning>
       <Head>
-        <link rel="alternate" href="https://example.com/en" hreflang="en" />
-        <link rel="alternate" href="https://example.com/zh" hreflang="zh" />
-        <link rel="alternate" href="https://example.com/zh-TW" hreflang="zh-TW" />
-        <link rel="alternate" href="https://example.com/ko" hreflang="ko" />
-        <link rel="alternate" href="https://example.com/vi" hreflang="vi" />
-        <link rel="alternate" href="https://example.com/ru" hreflang="ru" />
-        <link rel="alternate" href="https://example.com/ja" hreflang="ja" />
+      <link rel="alternate" href="https://example.com/en" hrefLang="en" />
+        <link rel="alternate" href="https://example.com/zh" hrefLang="zh" />
+        <link rel="alternate" href="https://example.com/zh-TW" hrefLang="zh-TW" />
+        <link rel="alternate" href="https://example.com/ko" hrefLang="ko" />
+        <link rel="alternate" href="https://example.com/vi" hrefLang="vi" />
+        <link rel="alternate" href="https://example.com/ru" hrefLang="ru" />
+        <link rel="alternate" href="https://example.com/ja" hrefLang="ja" />
       </Head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <I18nProvider>
