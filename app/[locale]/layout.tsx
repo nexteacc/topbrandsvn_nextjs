@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { NextIntlClientProvider, useMessages } from "next-intl";
+import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { locales } from "../../i18n";
 import ThemeProvider from "../components/ThemeProvider";
