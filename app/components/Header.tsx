@@ -2,34 +2,41 @@
 
 import React, { useEffect, useState } from 'react';
 import { useTheme } from 'next-themes';
-import { useTranslation } from 'react-i18next';
+import { useTranslations, useLocale } from 'next-intl';
+import { useRouter, usePathname } from 'next/navigation';
 
 export default function Header() {
-  const { t, i18n } = useTranslation();
+  const t = useTranslations();
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
 
   const [mounted, setMounted] = useState(false);
-  const [isDarkMode, setIsDarkMode] = useState(false);
 
-
+  // 仅在客户端挂载后处理主题
   useEffect(() => {
     setMounted(true);
+  }, []); 
 
-    const currentTheme = theme === 'system'
-      ? window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      : theme;
-    setIsDarkMode(currentTheme === 'dark');
-  }, [theme]); 
+  // 在客户端确定当前主题状态
+  const isDarkMode = mounted && (theme === 'dark' || 
+    (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches));
 
   const toggleDarkMode = () => {
-    const newTheme = isDarkMode ? 'light' : 'dark';
-    setTheme(newTheme);
-    setIsDarkMode(!isDarkMode); 
+    setTheme(isDarkMode ? 'light' : 'dark');
   };
 
   const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    i18n.changeLanguage(event.target.value);
-    
+    const newLocale = event.target.value;
+    // Remove current locale prefix if present
+    let newPath = pathname;
+    if (pathname.startsWith(`/${locale}`)) {
+      newPath = pathname.substring(locale.length + 1) || '/'; // Ensure it's at least '/'
+    }
+    // Add new locale prefix (unless it's the default and localePrefix is 'as-needed', which is handled by middleware)
+    // For simplicity here, we always prefix. The middleware will handle 'as-needed'.
+    router.push(`/${newLocale}${newPath}`);
   };
 
   
@@ -61,9 +68,9 @@ export default function Header() {
           </div>
         
           <select
-            value={i18n.language.split('-')[0]} 
+            value={locale}
             onChange={handleLanguageChange}
-            className="border dark:border-gray-600 rounded px-2 py-1 bg-white dark:bg-gray-800 text-sm" 
+            className="border dark:border-gray-600 rounded px-2 py-1 bg-white dark:bg-gray-800 text-sm"
           >
             <option value="en">English</option>
             <option value="zh">简体中文</option>

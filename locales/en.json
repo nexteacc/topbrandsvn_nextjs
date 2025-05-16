@@ -17,7 +17,25 @@
         "other_restaurants": "Other Restaurants"
       },
       "delivery_platforms": "Delivery Platforms",
-      "coffee_chains": "Coffee Chains"
+      "coffee_chains": "Coffee Chains",
+      "other_restaurants": "Other Restaurants"
     },
-    "yourtitle": "Top Vietnam Brand"
+    "yourtitle": "Top Vietnam Brand",
+    "brand_categories": "Brand Categories",
+    "back": "Back",
+    "subcategory": {
+      "supermarket": "Supermarket",
+      "mall": "Shopping Mall",
+      "mobile_retail": "Mobile Retail",
+      "convenience_store": "Convenience Store",
+      "fast_food_chains": "Fast Food Chains",
+      "pizza_chains": "Pizza Chains",
+      "other_restaurants": "Other Restaurants",
+      "female_fashion": "Women Fashion",
+      "male_fashion": "Men Fashion",
+      "fashion": "Fashion",
+      "restaurant_chains": "Restaurant Chains",
+      "delivery_platforms": "Delivery Platforms",
+      "coffee_chains": "Coffee Chains"
+    }
 }
