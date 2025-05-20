@@ -2,16 +2,17 @@ import { ReactNode } from "react";
 import { NextIntlClientProvider } from "next-intl";
 import { notFound } from "next/navigation";
 import { locales } from "../../i18n";
+import { Locale, LocaleParams, AsyncLocaleParams } from "../../types";
 import ThemeProvider from "../components/ThemeProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Script from 'next/script';
 
 export function generateStaticParams() {
-  return locales.map((locale: string) => ({ locale }));
+  return locales.map((locale: Locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateMetadata({ params }: AsyncLocaleParams) {
   const { locale } = await params; // 使用 await 确保异步获取
 
   const titles: Record<string, string> = {
@@ -103,7 +104,7 @@ export default async function LocaleLayout({
   params,
 }: {
   children: ReactNode;
-  params: Promise<{ locale: string }>;
+  params: Promise<LocaleParams>;
 }) {
   // 在使用 params 的属性前先 await
   const { locale } = await params;
@@ -118,7 +119,7 @@ export default async function LocaleLayout({
   }
 
   // 构建hreflang链接
-  const hreflangLinks = locales.map(lang => (
+  const hreflangLinks = locales.map((lang: Locale) => (
     <link 
       key={lang}
       rel="alternate" 

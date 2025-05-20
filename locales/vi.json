@@ -19,5 +19,22 @@
     "delivery_platforms": "Nền tảng giao đồ ăn",
     "coffee_chains": "Chuỗi cà phê"
   },
-  "yourtitle": "Thương hiệu hàng đầu Việt Nam"
+  "yourtitle": "Thương hiệu hàng đầu Việt Nam",
+  "brand_categories": "Danh mục thương hiệu",
+  "back": "Quay lại",
+  "subcategory": {
+    "supermarket": "Siêu thị",
+    "mall": "Trung tâm thương mại",
+    "mobile_retail": "Cửa hàng điện thoại",
+    "convenience_store": "Cửa hàng tiện lợi",
+    "fast_food_chains": "Chuỗi đồ ăn nhanh",
+    "pizza_chains": "Chuỗi bánh pizza",
+    "other_restaurants": "Các nhà hàng khác",
+    "female_fashion": "Thời trang nữ",
+    "male_fashion": "Thời trang nam",
+    "fashion": "Thời trang",
+    "restaurant_chains": "Chuỗi nhà hàng",
+    "delivery_platforms": "Nền tảng giao đồ ăn",
+    "coffee_chains": "Chuỗi cà phê"
+  }
 }
