@@ -2,9 +2,9 @@ import { useTranslations } from "next-intl";
 import directoryData from "../data/directoryData";
 
 export default function LocaleHomePage() {
-  const t_category = useTranslations('category'); // For category.* keys
-  const t_root = useTranslations(); // For root level keys
-  const t_sub = useTranslations('subcategory'); // For subcategory keys
+  const t_category = useTranslations('category');
+  const t_root = useTranslations();
+  const t_sub = useTranslations('subcategory');
 
   return (
     <div>
@@ -21,17 +21,27 @@ export default function LocaleHomePage() {
               </ul>
             ) : (
               <ul>
-                {Object.entries(brands).map(([subCategory, subBrands]) => (
-                  <li key={subCategory}>
-                    <strong>{category === 'restaurant_chains' ? t_category(`restaurant_subcategories.${subCategory}`) : t_sub(subCategory)}:</strong>{" "}
-                    {Array.isArray(subBrands)
-                      ? subBrands.join(", ")
-                      : Object.entries(subBrands)
+                {Object.entries(brands).map(([subCategory, subBrandList]) => (
+                  <li key={subCategory} className="mt-2">
+                    <strong>
+                      {category === 'restaurant_chains'
+                        ? t_category(`restaurant_subcategories.${subCategory}`)
+                        : t_sub(subCategory)}:
+                    </strong>
+                    {Array.isArray(subBrandList) ? (
+                      <ul>
+                        {(subBrandList as string[]).map((brandName) => (
+                          <li key={brandName}>{brandName}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      Object.entries(subBrandList)
                           .map(
-                            ([deepCategory, deepBrands]) =>
-                              `${category === 'restaurant_chains' ? t_category(`restaurant_subcategories.${deepCategory}`) : t_sub(deepCategory)}: ${(deepBrands as string[]).join(", ")}`
+                            ([deepCategory, deepBrandsValue]) =>
+                              `${category === 'restaurant_chains' ? t_category(`restaurant_subcategories.${deepCategory}`) : t_sub(deepCategory)}: ${(deepBrandsValue as string[]).join(", ")}`
                           )
-                          .join("; ")}
+                          .join("; ")
+                    )}
                   </li>
                 ))}
               </ul>
