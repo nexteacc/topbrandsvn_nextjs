@@ -5,12 +5,13 @@ import { locales } from "../../i18n";
 import ThemeProvider from "../components/ThemeProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Script from 'next/script';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
-export async function generateMetadata({ params }: { params: { locale: string } }) {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params; // 使用 await 确保异步获取
 
   const titles: Record<string, string> = {
@@ -99,15 +100,14 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default async function LocaleLayout({
   children,
-  params: paramsProp, // 将 params 重命名为 paramsProp
+  params,
 }: {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   // 在使用 params 的属性前先 await
-  const params = await paramsProp;
-  console.log('[LocaleLayout] params.locale:', params.locale); 
-  const { locale } = params;
+  const { locale } = await params;
+  console.log('[LocaleLayout] params.locale:', locale);
   let messages;
   try {
     // 修改为使用动态 import()
@@ -142,8 +142,12 @@ export default async function LocaleLayout({
       <head>
         {hreflangLinks}
         {xDefaultLink}
+        <meta
+          name="format-detection"
+          content="telephone=no, date=no, email=no, address=no"
+        />
       </head>
-      <body>
+      <body className="antialiased">
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <div className="min-h-screen bg-white dark:bg-gray-900 text-[#222222] dark:text-gray-100 flex flex-col">
@@ -153,6 +157,19 @@ export default async function LocaleLayout({
               </main>
               <Footer />
             </div>
+            <Script async src="https://www.googletagmanager.com/gtag/js?id=G-703Z96SWLE"></Script>
+            <Script
+              id="google-analytics"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', 'G-703Z96SWLE');
+                `,
+              }}
+            />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

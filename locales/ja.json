@@ -19,5 +19,22 @@
     "delivery_platforms": "デリバリープラットフォーム",
     "coffee_chains": "コーヒーチェーン"
   },
-  "yourtitle": "ベトナムトップブランド"
+  "yourtitle": "ベトナムトップブランド",
+  "brand_categories": "ブランドカテゴリー",
+  "back": "戻る",
+  "subcategory": {
+    "supermarket": "スーパーマーケット",
+    "mall": "ショッピングモール",
+    "mobile_retail": "携帯販売店",
+    "convenience_store": "コンビニ",
+    "fast_food_chains": "ファーストフードチェーン",
+    "pizza_chains": "ピザチェーン",
+    "other_restaurants": "その他のレストラン",
+    "female_fashion": "女性ファッション",
+    "male_fashion": "男性ファッション",
+    "fashion": "ファッション",
+    "restaurant_chains": "レストランチェーン",
+    "delivery_platforms": "デリバリープラットフォーム",
+    "coffee_chains": "コーヒーチェーン"
+  }
 }
