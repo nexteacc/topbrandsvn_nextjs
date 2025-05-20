@@ -8,7 +8,7 @@ import Footer from "../components/Footer";
 import Script from 'next/script';
 
 export function generateStaticParams() {
-  return locales.map((locale) => ({ locale }));
+  return locales.map((locale: string) => ({ locale }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
