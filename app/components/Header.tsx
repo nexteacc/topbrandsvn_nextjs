@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useTheme } from 'next-themes';
 import { useTranslations, useLocale } from 'next-intl';
 import { useRouter, usePathname } from 'next/navigation';
 
@@ -10,7 +9,7 @@ export default function Header() {
   const locale = useLocale();
   const router = useRouter();
   const pathname = usePathname();
-  const { theme } = useTheme();
+
 
   const [mounted, setMounted] = useState(false);
 
