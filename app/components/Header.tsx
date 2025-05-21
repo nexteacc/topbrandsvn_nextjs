@@ -17,15 +17,16 @@ export default function Header() {
   // 仅在客户端挂载后处理主题
   useEffect(() => {
     setMounted(true);
-  }, []); 
+  }, []);
 
   // 在客户端确定当前主题状态
-  const isDarkMode = mounted && (theme === 'dark' || 
+  const isDarkMode = mounted && (theme === 'dark' ||
     (theme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches));
 
-  const toggleDarkMode = () => {
-    setTheme(isDarkMode ? 'light' : 'dark');
-  };
+  // 移除未使用的 toggleDarkMode 函数
+  // const toggleDarkMode = () => {
+  //   setTheme(isDarkMode ? 'light' : 'dark');
+  // };
 
   const handleLanguageChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
     const newLocale = event.target.value;
