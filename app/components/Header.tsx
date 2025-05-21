@@ -55,6 +55,7 @@ export default function Header() {
         </div>
         <div className="flex items-center space-x-4">
 
+          {/* 暂时注释掉主题切换按钮
           <div className="theme-switch-container">
             <input
               type="checkbox"
@@ -66,6 +67,7 @@ export default function Header() {
             />
             <label htmlFor="darkModeToggle" className="label"></label>
           </div>
+          */}
         
           <select
             value={locale}

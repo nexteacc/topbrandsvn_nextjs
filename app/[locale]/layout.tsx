@@ -7,7 +7,7 @@ import ThemeProvider from "../components/ThemeProvider";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Script from 'next/script';
-import { BackgroundPaths } from "@/components/ui/background-paths"; // Added import
+import { BackgroundPaths } from "@/components/ui/background-paths"; 
 
 export function generateStaticParams() {
   return locales.map((locale: Locale) => ({ locale }));
@@ -153,7 +153,7 @@ export default async function LocaleLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
             <BackgroundPaths>
-              <div className="min-h-screen bg-transparent dark:bg-transparent text-[#222222] dark:text-gray-100 flex flex-col">
+              <div className="min-h-screen bg-background text-[#222222] dark:text-gray-100 flex flex-col">
                 <Header />
                 <main className="flex-grow container mx-auto px-6 py-12">
                   {children}

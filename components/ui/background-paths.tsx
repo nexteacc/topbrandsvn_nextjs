@@ -14,7 +14,7 @@ function FloatingPaths({ position }: { position: number }) {
             684 - i * 5 * position
         } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
         color: `rgba(15,23,42,${0.1 + i * 0.03})`,
-        width: 0.2 + i * 0.02, // Adjusted for thinner lines
+        width: 0.1 + i * 0.01, // Adjusted for thinner lines
     }));
 
     return (
