@@ -3,7 +3,7 @@ import Link from "next/link";
 import fs from "fs";
 import path from "path";
 import { marked } from "marked";
-import { useTranslations } from "next-intl";
+
 
 // 获取单个Markdown文件内容
 async function getMarkdownContent(slug: string) {
@@ -31,7 +31,7 @@ async function getMarkdownContent(slug: string) {
 }
 
 // 生成静态参数
-export async function generateStaticParams({ params }: { params: Promise<{ locale: string }> }) {
+export async function generateStaticParams() {
   try {
     const newsDir = path.join(process.cwd(), "app", "data", "news");
     const files = await fs.promises.readdir(newsDir);
