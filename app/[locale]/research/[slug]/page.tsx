@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import ResearchBackButton from "../../../components/ResearchBackButton";
 import fs from "fs";
 import path from "path";
