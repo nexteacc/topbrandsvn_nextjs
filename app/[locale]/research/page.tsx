@@ -4,8 +4,8 @@ import fs from "fs";
 import path from "path";
 
 // 只从 data/news 目录下读取所有 .md 新闻文件
-async function getMarkdownNewsList() {
-  const newsDir = path.join(process.cwd(), "app", "data", "news");
+async function getMarkdownNewsList(locale: string) {
+  const newsDir = path.join(process.cwd(), "app", "data", "news", locale);
   const files = await fs.promises.readdir(newsDir);
   // 只筛选以.md结尾的新闻文件
   const newsFiles = files.filter(f => f.endsWith(".md"));
@@ -28,7 +28,7 @@ async function getMarkdownNewsList() {
 export default async function NewsListPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const resolvedLocale = locale || "zh";
-  const newsList = await getMarkdownNewsList();
+  const newsList = await getMarkdownNewsList(resolvedLocale);
   return (
     <div>
       <h1 className="text-2xl font-bold mb-6">Research</h1>

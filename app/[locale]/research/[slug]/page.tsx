@@ -7,9 +7,9 @@ import { marked } from "marked";
 
 
 // 获取单个Markdown文件内容
-async function getMarkdownContent(slug: string) {
+async function getMarkdownContent(locale: string, slug: string) {
   try {
-    const newsDir = path.join(process.cwd(), "app", "data", "news");
+    const newsDir = path.join(process.cwd(), "app", "data", "news", locale);
     const filePath = path.join(newsDir, `${decodeURIComponent(slug)}.md`);
     const content = await fs.promises.readFile(filePath, "utf-8");
     
@@ -34,13 +34,23 @@ async function getMarkdownContent(slug: string) {
 // 生成静态参数
 export async function generateStaticParams() {
   try {
-    const newsDir = path.join(process.cwd(), "app", "data", "news");
-    const files = await fs.promises.readdir(newsDir);
-    const newsFiles = files.filter(f => f.endsWith(".md"));
+    const newsBaseDir = path.join(process.cwd(), "app", "data", "news");
+    const locales = await fs.promises.readdir(newsBaseDir);
+    let allParams: { locale: string; slug: string }[] = [];
+
+    for (const locale of locales) {
+      const newsDir = path.join(newsBaseDir, locale);
+      const files = await fs.promises.readdir(newsDir);
+      const newsFiles = files.filter(f => f.endsWith(".md"));
+
+      const paramsForLocale = newsFiles.map(file => ({
+        locale: locale,
+        slug: encodeURIComponent(file.replace(/\.md$/, ""))
+      }));
+      allParams = allParams.concat(paramsForLocale);
+    }
     
-    return newsFiles.map(file => ({
-      slug: encodeURIComponent(file.replace(/\.md$/, ""))
-    }));
+    return allParams;
   } catch (error) {
     console.error('Error generating static params:', error);
     return [];
@@ -53,7 +63,7 @@ export default async function NewsDetailPage({
   params: Promise<{ locale: string; slug: string }> 
 }) {
   const { locale, slug } = await params;
-  const article = await getMarkdownContent(slug);
+  const article = await getMarkdownContent(locale, slug);
 
   
   if (!article) {
