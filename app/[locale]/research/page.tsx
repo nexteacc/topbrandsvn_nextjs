@@ -35,7 +35,7 @@ export default async function NewsListPage({ params }: { params: Promise<{ local
       <ul>
         {newsList.map(news => (
           <li key={news.id} className="mb-4">
-            <Link href={`/${resolvedLocale}/research/${encodeURIComponent(news.rawFileName.replace(/\.md$/, ""))}`} className="text-blue-600 hover:underline">
+            <Link href={`/${resolvedLocale}/research/${encodeURIComponent(news.rawFileName.replace(/\.md$/, ""))}`} className="text-primary hover:underline transition-all duration-200 ease-in-out">
               <span className="font-semibold">{news.title}</span>
             </Link>
           </li>
