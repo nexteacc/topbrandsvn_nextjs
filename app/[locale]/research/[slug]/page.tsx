@@ -1,8 +1,10 @@
 import React from "react";
 import Link from "next/link";
+import ResearchBackButton from "../../../components/ResearchBackButton";
 import fs from "fs";
 import path from "path";
 import { marked } from "marked";
+
 
 
 // 获取单个Markdown文件内容
@@ -53,14 +55,13 @@ export default async function NewsDetailPage({
 }) {
   const { locale, slug } = await params;
   const article = await getMarkdownContent(slug);
+
   
   if (!article) {
     return (
       <div>
         <h1 className="text-2xl font-bold mb-6">文章未找到</h1>
-        <Link href={`/${locale}/research`} className="text-blue-600 hover:underline">
-          ← 返回研究页面
-        </Link>
+        <ResearchBackButton locale={locale} />
       </div>
     );
   }
@@ -68,9 +69,7 @@ export default async function NewsDetailPage({
   return (
     <div>
       <div className="mb-6">
-        <Link href={`/${locale}/research`} className="text-blue-600 hover:underline">
-          ← 返回研究页面
-        </Link>
+        <ResearchBackButton locale={locale} />
       </div>
       
       <article className="prose dark:prose-invert max-w-none">
