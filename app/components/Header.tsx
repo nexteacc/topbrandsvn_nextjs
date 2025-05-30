@@ -37,10 +37,11 @@ export default function Header() {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div>
 
-          <h1 className="text-[22px] font-light tracking-[-0.01em]">{t('yourtitle')}</h1>
+          <a href={`/${locale}`} className="text-[22px] font-light tracking-[-0.01em] hover:scale-105 transition-all duration-300" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.2)'}}>{t('yourtitle')}</a>
           <p className="text-[#555] dark:text-gray-400 text-[12px] mt-1">A-Z</p>
         </div>
         <div className="flex items-center space-x-4">
+          <a href={`/${locale}/research`} className="text-[22px] font-light tracking-[-0.01em] mr-4 transition-all duration-300 hover:scale-105 text-shadow hover:text-shadow-lg" style={{textShadow: '1px 1px 2px rgba(0,0,0,0.2)'}}>{t('research')}</a>
 
 
           <select
