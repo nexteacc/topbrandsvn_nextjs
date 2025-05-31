@@ -7,8 +7,8 @@ import path from "path";
 async function getMarkdownNewsList(locale: string) {
   const newsDir = path.join(process.cwd(), "app", "data", "news", locale);
   const files = await fs.promises.readdir(newsDir);
-  // 只筛选以.md结尾的新闻文件
-  const newsFiles = files.filter(f => f.endsWith(".md"));
+  // 只筛选以.md结尾且不是隐藏文件的新闻文件
+  const newsFiles = files.filter(f => f.endsWith(".md") && !f.startsWith("."));
   // 解析文件名和标题
   const newsList = await Promise.all(newsFiles.map(async file => {
     const filePath = path.join(newsDir, file);

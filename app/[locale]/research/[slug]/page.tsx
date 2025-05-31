@@ -41,7 +41,8 @@ export async function generateStaticParams() {
     for (const locale of locales) {
       const newsDir = path.join(newsBaseDir, locale);
       const files = await fs.promises.readdir(newsDir);
-      const newsFiles = files.filter(f => f.endsWith(".md"));
+      // 过滤掉隐藏文件和非 .md 文件
+      const newsFiles = files.filter(f => f.endsWith(".md") && !f.startsWith("."));
 
       const paramsForLocale = newsFiles.map(file => ({
         locale: locale,
