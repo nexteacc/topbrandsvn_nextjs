@@ -191,6 +191,13 @@
   @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic mb-4;
 }
 
+.markdown-content a {
+  @apply text-blue-600 font-semibold underline underline-offset-2 transition-colors;
+}
+.markdown-content a:hover {
+  @apply text-pink-600 bg-yellow-100 dark:text-yellow-300 dark:bg-pink-900;
+}
+
 .logo {
   width: 200px;
   height: auto;

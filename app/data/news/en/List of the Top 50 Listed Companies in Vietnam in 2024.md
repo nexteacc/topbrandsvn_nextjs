@@ -153,3 +153,4 @@ Vietnam 2024:  Top 50 Listed Companies in Vietnam
     
     - Ticker：SZC, HSX
 
+source: [https://forbes.vn/50-cong-ty-niem-yet-tot-nhat-2024/](https://forbes.vn/50-cong-ty-niem-yet-tot-nhat-2024/)

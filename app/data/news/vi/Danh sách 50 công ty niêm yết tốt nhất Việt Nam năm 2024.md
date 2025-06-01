@@ -155,3 +155,4 @@ Danh sách 50 công ty niêm yết tốt nhất Việt Nam năm 2024
     
     - Mã cổ phiếu：SZC, HSX
 
+nguồn: [https://forbes.vn/50-cong-ty-niem-yet-tot-nhat-2024/](https://forbes.vn/50-cong-ty-niem-yet-tot-nhat-2024/)
