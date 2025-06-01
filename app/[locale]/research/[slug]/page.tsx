@@ -35,7 +35,16 @@ async function getMarkdownContent(locale: string, slug: string) {
 export async function generateStaticParams() {
   try {
     const newsBaseDir = path.join(process.cwd(), "app", "data", "news");
-    const locales = await fs.promises.readdir(newsBaseDir);
+    const allNames = await fs.promises.readdir(newsBaseDir);
+    const locales = allNames.filter(name => {
+    if (name.startsWith(".")) return false;
+    const fullPath = path.join(newsBaseDir, name);
+    try {
+      return fs.statSync(fullPath).isDirectory();
+    } catch {
+      return false;
+    }
+    });
     let allParams: { locale: string; slug: string }[] = [];
 
     for (const locale of locales) {

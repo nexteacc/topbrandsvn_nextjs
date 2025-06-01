@@ -190,3 +190,9 @@
 .markdown-content blockquote {
   @apply border-l-4 border-gray-300 dark:border-gray-600 pl-4 italic mb-4;
 }
+
+.logo {
+  width: 200px;
+  height: auto;
+  display: inline-block;
+}
