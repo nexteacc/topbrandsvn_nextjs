@@ -48,7 +48,7 @@ export async function generateStaticParams() {
         return false;
       }
     });
-    let allParams: { locale: string; slug: string }[] = [];
+    const allParams: { locale: string; slug: string }[] = [];
     for (const locale of locales) {
       const newsDir = path.join(newsBaseDir, locale);
       const files = await fs.promises.readdir(newsDir);
