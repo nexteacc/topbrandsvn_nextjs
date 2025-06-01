@@ -1,3 +1,6 @@
+---
+slug: vietnam-2025-mobile-retail
+---
 Vietnam 2025: Leading Mobile Retail Chains
 
 Here’s an overview of the top mobile phone retail chains shaping Vietnam’s market in 2025:

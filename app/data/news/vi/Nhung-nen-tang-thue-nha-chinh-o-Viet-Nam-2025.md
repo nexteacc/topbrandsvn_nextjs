@@ -1,3 +1,8 @@
+---
+slug: viet-nam-2025-thue-nha
+---
+
+
 Những nền tảng thuê nhà chính ở Việt Nam năm 2025
 
 Dưới đây là thông tin về các nền tảng thuê nhà chính hiện nay tại Việt Nam:

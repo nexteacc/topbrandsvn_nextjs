@@ -1,3 +1,6 @@
+---
+slug: vietnam-2025-shopping-malls
+---
 Vietnam 2025: Leading Shopping Mall Chains
 
 Discover the most influential shopping mall chains shaping Vietnam’s retail landscape in 2025:

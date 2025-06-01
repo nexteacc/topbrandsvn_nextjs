@@ -1,3 +1,6 @@
+---
+slug: vietnam-2025-bus-ticketing
+---
 Vietnam 2025: Top Bus Ticketing Platforms
 
 Here are the leading bus ticketing platforms you should know about in Vietnam:

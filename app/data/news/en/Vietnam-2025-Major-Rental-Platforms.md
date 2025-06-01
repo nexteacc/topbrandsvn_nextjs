@@ -1,3 +1,6 @@
+---
+slug: vietnam-2025-rental-platforms
+---
 Vietnam 2025 Major Rental Platforms
 
 Below is information on the main rental platforms currently available in Vietnam:
