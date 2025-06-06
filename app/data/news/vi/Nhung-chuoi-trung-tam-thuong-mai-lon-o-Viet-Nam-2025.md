@@ -3,7 +3,7 @@ slug: viet-nam-2025-trung-tam-thuong-mai
 ---
 
 
-Những chuỗi trung tâm thương mại lớn ở Việt Nam năm 2025
+# Những chuỗi trung tâm thương mại lớn ở Việt Nam năm 2025
 
 Dưới đây là tổng quan chi tiết về các chuỗi trung tâm thương mại lớn tại Việt Nam:
 

@@ -3,7 +3,7 @@ slug: viet-nam-2025-ban-le-dien-thoai
 ---
 
 
-Những chuỗi bán lẻ điện thoại hàng đầu ở Việt Nam năm 2025
+# Những chuỗi bán lẻ điện thoại hàng đầu ở Việt Nam năm 2025
 
 Dưới đây là tổng quan về các chuỗi bán lẻ điện thoại di động nổi bật nhất tại Việt Nam:
 

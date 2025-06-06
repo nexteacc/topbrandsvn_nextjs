@@ -1,7 +1,7 @@
 ---
 slug: vietnam-2025-fashion-retail
 ---
-Vietnam 2025: Leading Fashion Retail Chains
+# Vietnam 2025: Leading Fashion Retail Chains
 
 Below are some of the major fashion retail chains currently operating in Vietnam:
 

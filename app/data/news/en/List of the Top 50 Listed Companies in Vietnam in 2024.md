@@ -3,7 +3,7 @@ slug: vietnam-2024-top-50
 ---
 
 
-Vietnam 2024:  Top 50 Listed Companies in Vietnam
+# Vietnam 2024:  Top 50 Listed Companies in Vietnam
 
 1. **Nam Long Investment Corporation**
     

@@ -15,12 +15,10 @@ async function getMarkdownNewsList(locale: string) {
     const filePath = path.join(newsDir, file);
     const rawContent = await fs.promises.readFile(filePath, "utf-8");
     const { data, content } = matter(rawContent);
-    // 取第一行作为标题
-    const titleMatch = content.match(/^#*\s*(.+)/m);
     return {
       id: data.slug || file.replace(/\.md$/, ""),
       slug: data.slug || file.replace(/\.md$/, ""),
-      title: titleMatch ? titleMatch[1] : file,
+      title: data.title || file.replace(/\.md$/, ""), // 使用 front matter 中的标题，如果不存在则使用文件名并移除 .md 后缀
       fileName: file,
       rawFileName: file // 添加原始文件名用于后续处理
     };

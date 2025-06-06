@@ -17,11 +17,8 @@ async function getMarkdownContent(locale: string, slug: string) {
       const { data, content } = matter(rawContent);
       if (data.slug === slug) {
         const htmlContent = marked(content);
-        // 提取标题（第一行）
-        const titleMatch = content.match(/^#*\s*(.+)/m);
-        const title = titleMatch ? titleMatch[1] : slug;
         return {
-          title,
+          // title, // 标题将由markdown内容自带
           content: htmlContent,
           rawContent
         };
@@ -90,8 +87,8 @@ export default async function NewsDetailPage({
       <div className="mb-6">
         <ResearchBackButton locale={locale} />
       </div>
-      <article className="prose dark:prose-invert max-w-none">
-        <h1 className="text-3xl font-bold mb-6">{article.title}</h1>
+      <article className="prose dark:prose-invert mx-auto">
+        {/* <h1 className="text-3xl font-bold mb-6">{article.title}</h1> */}
         <div 
           className="markdown-content"
           dangerouslySetInnerHTML={{ __html: article.content }}
