@@ -152,7 +152,7 @@
 }
 
 .markdown-content h1 {
-  @apply text-3xl font-bold mb-6 mt-8 text-gray-900 dark:text-gray-100;
+  @apply text-3xl font-bold mb-6 mt-8 text-gray-900 dark:text-gray-100 text-center;
 }
 
 .markdown-content h2 {
@@ -160,15 +160,16 @@
 }
 
 .markdown-content h3 {
-  @apply text-xl font-medium mb-3 mt-4 text-gray-900 dark:text-gray-100;
+  @apply text-xl font-medium mb-3 mt-4 text-gray-900 dark:text-gray-100 text-center;
 }
 
 .markdown-content p {
-  @apply mb-4 leading-relaxed text-gray-700 dark:text-gray-300;
+  @apply mb-4 leading-relaxed text-gray-700 dark:text-gray-300 text-left;
 }
 
 .markdown-content ul {
   @apply mb-4 pl-6;
+  list-style-type: disc;
 }
 
 .markdown-content li {

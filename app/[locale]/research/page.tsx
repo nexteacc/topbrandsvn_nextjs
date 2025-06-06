@@ -14,7 +14,7 @@ async function getMarkdownNewsList(locale: string) {
   const newsList = await Promise.all(newsFiles.map(async file => {
     const filePath = path.join(newsDir, file);
     const rawContent = await fs.promises.readFile(filePath, "utf-8");
-    const { data, content } = matter(rawContent);
+    const { data } = matter(rawContent);
     return {
       id: data.slug || file.replace(/\.md$/, ""),
       slug: data.slug || file.replace(/\.md$/, ""),

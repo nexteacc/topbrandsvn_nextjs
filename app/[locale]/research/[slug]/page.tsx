@@ -87,7 +87,7 @@ export default async function NewsDetailPage({
       <div className="mb-6">
         <ResearchBackButton locale={locale} />
       </div>
-      <article className="prose dark:prose-invert mx-auto">
+      <article className="prose prose-lg dark:prose-invert mx-auto max-w-2xl">
         {/* <h1 className="text-3xl font-bold mb-6">{article.title}</h1> */}
         <div 
           className="markdown-content"
