@@ -3,19 +3,33 @@
 import { motion } from "framer-motion";
 // import { Button } from "@/components/ui/button";
 
-function FloatingPaths({ position }: { position: number }) {
-    const paths = Array.from({ length: 36 }, (_, i) => ({
-        id: i,
-        d: `M-${380 - i * 5 * position} -${189 + i * 6}C-${
-            380 - i * 5 * position
-        } -${189 + i * 6} -${312 - i * 5 * position} ${216 - i * 6} ${
-            152 - i * 5 * position
-        } ${343 - i * 6}C${616 - i * 5 * position} ${470 - i * 6} ${
-            684 - i * 5 * position
-        } ${875 - i * 6} ${684 - i * 5 * position} ${875 - i * 6}`,
-        color: `rgba(15,23,42,${0.1 + i * 0.03})`,
-        width: 0.1 + i * 0.01, // Adjusted for thinner lines
-    }));
+function FloatingPaths() { // Removed position parameter
+    const viewBoxWidth = 696;
+    const viewBoxHeight = 316;
+    const numPaths = 36;
+
+    const paths = Array.from({ length: numPaths }, (_, i) => {
+        // Paths start near the top (simulating near title) and end across the viewBox
+        const startX = Math.random() * (viewBoxWidth / 4); // Start X in the left 1/4 of the viewbox
+        const startY = Math.random() * (viewBoxHeight / 4); // Start Y in the top 1/4 of the viewbox
+
+        // Paths end in the bottom-right 3/4 of the viewbox
+        const endX = viewBoxWidth * (0.75 + Math.random() * 0.25); 
+        const endY = viewBoxHeight * (0.5 + Math.random() * 0.5); // End Y in the bottom half
+
+        // Control points to create a curve from top-left towards bottom-right
+        const cp1x = startX + (Math.random() * viewBoxWidth) / 2;
+        const cp1y = startY + (Math.random() * viewBoxHeight) / 2;
+        const cp2x = endX - (Math.random() * viewBoxWidth) / 2;
+        const cp2y = endY - (Math.random() * viewBoxHeight) / 2;
+
+        return {
+            id: i,
+            d: `M ${startX} ${startY} C ${cp1x} ${cp1y} ${cp2x} ${cp2y} ${endX} ${endY}`,
+            color: `rgba(15,23,42,${0.03 + i * 0.015})`, // Adjusted opacity for subtlety
+            width: 0.1 + i * 0.005, // Adjusted for thinner lines
+        };
+    });
 
     return (
         <div className="absolute inset-0 pointer-events-none">
@@ -57,13 +71,12 @@ export function BackgroundPaths({
     children: React.ReactNode;
 }) {
     return (
-        <div className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0">
-                <FloatingPaths position={1} />
-                <FloatingPaths position={-1} />
+        <div className="relative min-h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+            <div className="absolute inset-0 z-0">
+                <FloatingPaths />
             </div>
-
-            <div className="relative z-10 container mx-auto px-4 md:px-6">
+            {/* Ensure children are rendered on top and within the container for content layout */}
+            <div className="relative z-10 container mx-auto px-4 md:px-6 w-full flex-grow flex flex-col">
                 {children}
             </div>
         </div>
