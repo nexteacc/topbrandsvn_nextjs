@@ -3,9 +3,16 @@ slug: top-100-best-places-to-work-vietnam-2024-large-enterprises
 ---
 # Top 100 Nơi Làm Việc Tốt Nhất Việt Nam 2024 - Doanh Nghiệp Lớn
 
+## 🏆 TOP 1
+
 | Thứ hạng | Tên công ty | Tên đầy đủ công ty |
 |----------|-------------|--------------------|
 | 1 | Unilever | Unilever Vietnam |
+
+## 🥇 TOP 10
+
+| Thứ hạng | Tên công ty | Tên đầy đủ công ty |
+|----------|-------------|--------------------|
 | 2 | Abbott | Abbott Laboratories GmbH |
 | 3 | Acecook | Acecook Việt Nam |
 | 4 | Coca-Cola | Công ty TNHH Nước Giải Khát Coca-Cola Việt Nam |
@@ -15,15 +22,11 @@ slug: top-100-best-places-to-work-vietnam-2024-large-enterprises
 | 8 | Viettel | Tập Đoàn Công Nghiệp - Viễn Thông Quân Đội |
 | 9 | Vingroup | Tập Đoàn Vingroup - Công Ty CP |
 | 10 | AEON | Công Ty TNHH AEON Việt Nam |
-| 11 | BIDV | Ngân Hàng TMCP Đầu Tư Và Phát Triển Việt Nam (BIDV) |
-| 12 | Samsung | Công Ty TNHH Điện Tử Samsung Vina |
-| 13 | Shopee | Shopee Việt Nam |
-| 14 | Suntory PepsiCo | Suntory PepsiCo Việt Nam |
-| 15 | VietinBank | Ngân Hàng Thương Mại Cổ Phần Công Thương Việt Nam (VietinBank) |
-| 16 | VNG | Công Ty Cổ Phần VNG |
-| 17 | AEON | Công Ty TNHH AEON Việt Nam |
-| 18 | BIDV | Ngân Hàng TMCP Đầu Tư Và Phát Triển Việt Nam (BIDV) |
-| 19 | CJ Foods Vietnam | Công ty TNHH CJ Foods Vietnam |
+
+## 🥈 TOP 20-50
+
+| Thứ hạng | Tên công ty | Tên đầy đủ công ty |
+|----------|-------------|--------------------|
 | 20 | Honda | Honda Việt Nam |
 | 21 | PNJ Group | PNJ Group |
 | 22 | AstraZeneca | Công ty TNHH AstraZeneca Việt Nam |
@@ -56,10 +59,10 @@ slug: top-100-best-places-to-work-vietnam-2024-large-enterprises
 | 49 | VNPT | Tập đoàn Bưu chính Viễn thông Việt Nam (VNPT) |
 | 50 | Wipro | Wipro Consumer Care Việt Nam |
 
-
+## 🥉 TOP 51-100
 
 | Thứ hạng | Tên công ty | Tên đầy đủ công ty |
-|----------|-------------|--------------------|
+|----------|-------------|--------------------
 | 51 | ABB | Công ty TNHH ABB Automation & Electrification Việt Nam |
 | 52 | BIM Group | Tập đoàn BIM Group |
 | 53 | BAT | British American Tobacco Việt Nam |
